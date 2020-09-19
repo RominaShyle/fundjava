@@ -1,0 +1,10 @@
+.nav-link, .navbar-brand{
+  color: white;
+}
+
+.nav-link:hover {
+  color: #91b9e3;
+}
+.imazh{
+  width:-webkit-fill-available;
+}
