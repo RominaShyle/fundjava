@@ -10,19 +10,49 @@ var book = {
   }
 };
 
-document.getElementById('book').innerHTML = book.getSummary()
+
+document.getElementById('book').innerHTML = book.title
 
 var doc = document.getElementById('row');
 var a = doc.getElementsByClassName('book');
 
+
 document.querySelector("body").style.backgroundColor = "lightblue";
 
-function ndrysho(){
-  document.querySelector('button').style.backgroundColor = "black"
+function ndrysho(abc){
+  abc.style.backgroundColor = "black"
 }
 
 
 document.getElementById("button").addEventListener("dblclick", function(){
 
   this.innerHTML = "changed!"
+});
+
+
+document.querySelector("#button").addEventListener("click", function (){
+  this.innerHTML = "clicked!"
+  this.style.backgroundColor = 'lightblue'
 })
+
+document.querySelector('#button').addEventListener("dblclick", function() {
+
+  document.querySelector('#book').style.backgroundColor = "#c6e1d0";
+  this.innerHTML = "changed lali!"
+})
+
+
+var summary = document.querySelector('#book').childNodes[0].nodeValue
+
+console.log(summary);
+
+
+var paragrafi = document.createElement('p');
+
+var node = document.createTextNode("this is a text node");
+
+paragrafi.appendChild(node);
+
+var demo = document.querySelector('#demo2');
+
+demo.appendChild(paragrafi);

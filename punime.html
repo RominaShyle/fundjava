@@ -11,31 +11,27 @@
 
   </head>
   <body>
-
-    <div class="container my-3 border ">
+    <div class="container my-3 border">
       <div class="row">
         <div class="col-3">
-          <p id='demo1'></p>
+          <p id='demo1' class="book"></p>
         </div>
         <div class="col-3">
           <p id='demo2'></p>
         </div>
-
         <div class="col-3">
           <p id="demo3" onclick="fxn()"></p>
         </div>
-
         <div class="col-3">
           <p id="demo4"></p>
         </div>
-
       </div>
-  <h1 class = "h1"></h1>
+      <h1 class = "h1"></h1>
 
 
-      <div class="row" id = "row">
+      <div class="row body" id = "row">
         <div class="col-6">
-            <p id="book">
+            <p id="book" class="book">
 
             </p>
 
@@ -44,15 +40,11 @@
             </div>
 
             <div class="col-3">
-              <button type="button" name="button" class="btn btn-outline-secondary" onclick= "ndrysho()"> Click me!</button>
-
-
-                </div>
-                <div class="col-3">
-                  <button type="button" name="button" class="btn btn-outline-primary" id = "button"> Click me!</button>
-
-
-                    </div>
+              <button type="button" name="button" class="btn btn-outline-secondary" onclick= "ndrysho(this)">  i pari!</button>
+            </div>
+            <div class="col-3">
+                <button  id ="button" type="button" name="button" class="btn btn-outline-primary"> i dyti!</button>
+            </div>
 
 
       </div>
@@ -66,4 +58,6 @@
     </script>
 
   </body>
+  <footer>
+  </footer>
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>My Books </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+<h1>About me </h1>
+<div class="container">
+<button type="button" name="button" class = "btn btn-primary btn-group my-2"> click me</button>
+  <ul>
+    <li>Name: <span id="name"></span></li>
+    <li>Last Name: <span id ="last_name"></span></li>
+    <li>Age: <span id="age"></span></li>
+
+  </ul>
+</div>
+<h1 class="text-center">
+THIS IS MY BOOK LIST
+ </h1>
+
+ </body>
+ <script type="text/javascript">
+
+document.querySelector('button').addEventListener('click', function(){
+  document.body.style.fontFamily = 'Arial, sans-serif';
+  document.getElementById('name').textContent = "John";
+  document.getElementById('last_name').textContent = "Doe";
+  document.getElementById('age').textContent = "23";
+  var lista = document.getElementsByTagName('li');
+
+  for(var i = 0; i<lista.length; i++){
+    lista[i].className = "list-group-item";
+  }
+})
+
+ </script>
+</html>
