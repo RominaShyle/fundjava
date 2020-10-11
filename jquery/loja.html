@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+  
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+ 
+    
+    </head>
+    <body>
+
+        <div class="container my-4">
+            <p style="color:red" class="text-center">
+                Remember:
+                <pre style="text-align: center;">Rock breaks scissors, </pre>
+                <pre  style="text-align: center;"> scissors break paper, </pre>
+                <pre  style="text-align: center;">paper breaks rock. </pre></p>
+        
+        <div class="row" id="score">
+
+        </div>
+        <div class="row" id="message"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mx-5 "></div>
+            <div class="col-md-4">
+
+            <button type="button" class="btn btn-outline-primary  mx-2">Rock</button>
+            <button type="button" class="btn btn-outline-secondary  mx-2">Paper</button>
+            <button type="button" class="btn btn-outline-success  mx-2">Scissors</button>
+        </div>
+            <div class="col-md-4"></div>
+
+        </div>
+
+
+        <script>
+var butonat = document.querySelectorAll('button');
+
+
+$(document).ready(function(){
+
+var message = document.getElementById('message');   
+var score = document.getElementById('score');
+var winnerScores = [0,0];
+
+for(var i=0; i<butonat.length; i++){
+    butonat[i].addEventListener('click', playGame);
+}
+
+function playGame(event){
+
+    var playerSelection = event.target.innerText;
+    var computerSelection = Math.random();
+
+
+if(computerSelection < .34){
+    computerSelection = "Rock";
+}else if(computerSelection < .67){
+    computerSelection = "Paper";
+}else 
+computerSelection = "Scissors"
+
+
+var result = checkWinner(playerSelection, computerSelection);
+
+
+if(result == 'Player'){
+
+    result += ' wins';
+    winnerScores[0]++;
+}
+if(result == 'Computer'){
+
+    result += ' wins';
+    winnerScores[1]++;
+}
+if(result== "Draw"){
+    result += ". It's a tie!";
+}
+
+
+score.innerHTML = 'Player: [' + winnerScores[0]+ '] Computer: [' + winnerScores[1]+ ']'; 
+
+
+messenger('Player: <strong>  ' + playerSelection + ' </strong> Computer: <strong>  '  + "_ " + computerSelection + ' </strong> ' + "_" +result);
+
+}
+
+
+function messenger(selectionMessage){
+message.innerHTML = selectionMessage;
+
+}
+
+function checkWinner(player,computer){
+if(player == computer){
+
+    return "Draw";
+}
+
+if(player === 'Rock'){
+    if(computer === 'Paper'){
+        return "Computer"
+    }else
+    return "Player";
+}
+
+if(player === "Paper"){
+    if(computer === 'Scissors'){
+        return "Computer";
+    }else
+    return "Player"
+}
+
+if(player === "Scissors"){
+    if(computer === 'Rock'){
+        return "Computer";
+    }else
+    return "Player"
+}
+}
+
+
+
+
+                
+})
+        </script>
+        
+    </body>
+</html>
